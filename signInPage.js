@@ -32,9 +32,8 @@ puppeteer.launch(config.launchOptions).then(async browser =>{
 	await page.click(loginEmailPage.next);
 	await page.waitFor(loginPasswordPage.password)
 	console.log('got password element');
-
-	
 	await page.type(loginPasswordPage.password,"1234455");
+	await page.screenshot({path: 'example.png'});
 	await page.click(loginEmailPage.next);
 
 	// await browser.close();
